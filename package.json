@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start-server": "node index.js",
-    "client": "npm start --prefix client-react"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,12 +13,14 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "concurrently": "^6.1.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "express-validator": "^6.12.1",
+    "helmet": "^4.6.0",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.8",

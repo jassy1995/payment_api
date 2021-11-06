@@ -8,7 +8,7 @@ const compression = require("compression");
 require("dotenv").config();
 // const process = require("process");
 // if (process.env.NODE_ENV !== "production") {
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
 // }
 
 // Connect to MongoDB
@@ -33,6 +33,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/payment", paymentRoute);
+
 app.route("/").get(function (req, res) {
   res.sendFile(process.cwd() + "/index.html");
 });
