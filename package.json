@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start-server": "node server-node/index.js",
+    "start-server": "node index.js",
     "client": "npm start --prefix client-react"
   },
   "keywords": [],

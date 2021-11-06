@@ -6,10 +6,10 @@ const helmet = require("helmet");
 const compression = require("compression");
 //given access to dotenv variable
 require("dotenv").config();
-const process = require("process");
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 3001;
-}
+// const process = require("process");
+// if (process.env.NODE_ENV !== "production") {
+const PORT = process.env.PORT || 3001;
+// }
 
 // Connect to MongoDB
 const mongoose = require("mongoose");
