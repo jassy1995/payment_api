@@ -13,14 +13,14 @@ const PORT = process.env.PORT || 3006;
 
 // Connect to MongoDB
 const mongoose = require("mongoose");
-const db = process.env.mongoURI;
+const db = process.env.MONGODB_URI;
 
 // const db = process.env.OffLineMongoURI;
 mongoose
   .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    useFindAndModify: true,
     useCreateIndex: true,
     server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
