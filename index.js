@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 3006;
 
 // Connect to MongoDB
 const mongoose = require("mongoose");
-const db = process.env.MONGODB_URI;
+const dbOffLine = process.env.MONGODB_URI;
 
-// const db = process.env.OffLineMongoURI;
+const dbOnline = process.env.OffLineMongoURI;
 mongoose
-  .connect(db, {
+  .connect(dbOnline || dbOffLine, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
@@ -37,7 +37,7 @@ app.use("/payment", paymentRoute);
 app.route("/").get(function (req, res) {
   res.sendFile(process.cwd() + "/index.html");
 });
-
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
