@@ -13,7 +13,7 @@ exports.PayMe = async (req, res, next) => {
   ) {
     phone = phone_number;
     response =
-      "Welcome! This service allows to fulfil a payment to a merchant ,kindly enter your phone to proceed";
+      "Welcome! This service allows to fulfil a payment to a merchant.";
     try {
       const userRequest = await axios.post(
         "https://sellbackend.creditclan.com/parent/index.php/globalrequest/get_payment__order",
