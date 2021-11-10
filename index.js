@@ -4,29 +4,10 @@ const cors = require("cors");
 const paymentRoute = require("./routes/payment");
 const helmet = require("helmet");
 const compression = require("compression");
-//given access to dotenv variable
-require("dotenv").config();
-// const process = require("process");
-// if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 const PORT = process.env.PORT || 3006;
-// }
-
-// Connect to MongoDB
-const mongoose = require("mongoose");
-const dbOffLine = process.env.MONGODB_URI;
-
-const dbOnline = process.env.OffLineMongoURI;
-mongoose
-  .connect(dbOnline || dbOffLine, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true,
-    server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-  })
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch((err) => console.log(err));
 app.use(helmet());
 app.use(compression());
 app.use(cors());
@@ -37,7 +18,7 @@ app.use("/payment", paymentRoute);
 app.route("/").get(function (req, res) {
   res.sendFile(process.cwd() + "/index.html");
 });
-const PORT = process.env.PORT || 3006;
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
