@@ -17,7 +17,7 @@ exports.PayMe = async (req, res, next) => {
         { phone: phone_number }
       );
       if (userRequest.message === "No record found") {
-        return res.status(200).json({
+        return res.status(500).json({
           message: "There are no request payment for this number",
         });
       } else if (userRequest.status) {
