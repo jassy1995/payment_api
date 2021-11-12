@@ -16,7 +16,7 @@ exports.PayMe = async (req, res, next) => {
         "https://sellbackend.creditclan.com/parent/index.php/globalrequest/get_payment__order",
         { phone: phone_number }
       );
-      if (!userRequest.status) {
+      if (userRequest.status === false) {
         return res.status(200).json({
           message: "There are no request payment for this number",
         });
